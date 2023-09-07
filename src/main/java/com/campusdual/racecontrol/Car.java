@@ -1,10 +1,14 @@
 package com.campusdual.racecontrol;
 
+import com.campusdual.util.Input;
 import org.json.simple.*;
 import org.json.simple.parser.JSONParser;
 
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
 
 
 /*
@@ -16,8 +20,12 @@ public class Car {
     public static final String BRAND = "brand";
     public static final String MODEL = "model";
     public static final int MAX_SPEED = 200;
+    private static List<Car> carList = new ArrayList<>();
     private String brand;
     private String model;
+    private int score;
+    private int speed = 0;
+    private String garageName;
 
     /*
      * User class constructor.
@@ -27,6 +35,13 @@ public class Car {
         this.brand = brand;
         this.model = model;
     }
+
+    public static void newCarToList(){
+        String b = Input.string("Enter car brand: ");
+        String m = Input.string("Enter car model: ");
+        Car.carList.add(new Car(b, m));
+    }
+
 
     /*
      * Method to get one car's brand.
@@ -52,10 +67,69 @@ public class Car {
     public void setModel(String model) {
         this.model = model;
     }
+    /*
+     * Method to get one car's score.
+     * */
+    public int getScore() {
+        return score;
+    }
+    /*
+     * Method to change one car's score.
+     * */
+    public void setScore(int score) {
+        this.score = score;
+    }
+    /*
+     * Method to get one car's speed.
+     * */
+    public int getSpeed() {
+        return speed;
+    }
+    /*
+     * Method to change one car's speed.
+     * */
+    public void setSpeed(int speed) {
+        this.speed = speed;
+    }
 
+    public String getGarageName() {
+        return garageName;
+    }
+
+    /*
+     * Method to start the car with a random speed between 1 and MAX_SPEED.
+     * */
+    public void start(){
+        Random r = new Random();
+        this.speed = r.nextInt(MAX_SPEED + 1);
+    }
+    /*
+     * Method to speed up a car in 10km/h intervals.
+     * */
+    public void speedUp(){
+        Random r = new Random();
+        this.speed = this.speed+r.nextInt(10);
+    }
+    /*
+     * Method to slow down a car in 10km/h intervals.
+     * */
+    public void slowDown(){
+        Random r = new Random();
+        this.speed = this.speed-r.nextInt(10);
+    }
+    /*
+     * Method to stop the car, changing speed back to 0.
+     * */
+    public void stop(){
+        this.speed = 0;
+    }
+
+    /*
+     * Overwritten method to print the properties of a car.
+     * */
     @Override
     public String toString(){
-        return this.getBrand() + " " + this.getModel();
+        return "Brand: " + this.getBrand() + "\nModel: " + this.getModel();
     }
     /*
      * Method to export car-type objects to JSON.

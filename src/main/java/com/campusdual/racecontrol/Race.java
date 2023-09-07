@@ -57,7 +57,7 @@ public abstract class Race {
         return ThreadLocalRandom.current().nextInt(min, max+1);
     }
     /*
-     * Override method to print the properties of a race.
+     * Overwritten method to print the properties of a race.
      * */
     @Override
     public String toString(){
