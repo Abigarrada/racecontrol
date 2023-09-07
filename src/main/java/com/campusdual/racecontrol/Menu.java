@@ -74,16 +74,16 @@ public class Menu {
                     "5: Back \n");
             switch (garageMenu) {
                 case 1:
-                    System.out.println("Opción 1");
+                    Garage.addGarageToList();
                     break;
                 case 2:
-                    System.out.println("Opción 2");
+                    Garage.showGarageList();
                     break;
                 case 3:
                     Car.newCarToList();
                     break;
                 case 4:
-                    System.out.println("Opción 4");
+                    Car.showCarList();
                     break;
                 case 5:
                     break;

@@ -17,7 +17,7 @@ public class Control {
     *
     * --PARA LOS GARAJES Y COCHES--
     *       registrar un garaje
-    *       registrar un coche
+    *       registrar un coche OK
     *       ver lista de garajes
     *       ver lista de coches
     *       ver lista de coches por garaje

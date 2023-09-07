@@ -20,7 +20,7 @@ public class Car {
     public static final String BRAND = "brand";
     public static final String MODEL = "model";
     public static final int MAX_SPEED = 200;
-    private static List<Car> carList = new ArrayList<>();
+    protected static List<Car> carList = new ArrayList<>();
     private String brand;
     private String model;
     private int score;
@@ -28,21 +28,40 @@ public class Car {
     private String garageName;
 
     /*
-     * User class constructor.
+     * Car class constructor.
      * Needs brand and model.
      * */
-    public Car(String brand, String model) {
+    public Car(String brand, String model, String garageName) {
         this.brand = brand;
         this.model = model;
+        this.garageName = garageName;
     }
 
+    /*
+     * Method to create a new car adding it to the car list from the menu.
+     * */
     public static void newCarToList(){
-        String b = Input.string("Enter car brand: ");
-        String m = Input.string("Enter car model: ");
-        Car.carList.add(new Car(b, m));
+        System.out.println("Select one garage from the following list: \n");
+        Garage.showGarageList();
+        String g = Input.string("Enter garage name: ");
+        if (Garage.garageList.toString().equals(g)){
+            String b = Input.string("Enter car brand: ");
+            String m = Input.string("Enter car model: ");
+            Car.carList.add(new Car(b.toLowerCase(), m.toLowerCase(), g));
+            System.out.println("New car " + b.toLowerCase() + " " + m.toLowerCase() + " was registered " +
+                    "to the garage" + g + ".");
+        }else {
+            System.out.println("Select a valid garage name");
+        }
     }
-
-
+    /*
+     * Method to show the complete car list.
+     * */
+    public static void showCarList(){
+        for (Car c: carList){
+            System.out.println(c);
+        }
+    }
     /*
      * Method to get one car's brand.
      * */
