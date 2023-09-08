@@ -7,6 +7,7 @@ package com.campusdual.racecontrol;
 public class StandardRace extends Race {
     private static final int MIN_STANDARD_LENGTH = 60;
     private static final int MAX_STANDARD_LENGTH = 240;
+    public static final String STANDARD_TYPE = "Standard";
 
     /*
     * StandardRace class constructor.
@@ -15,7 +16,7 @@ public class StandardRace extends Race {
     * */
     public StandardRace(String raceName) {
         super(raceName);
-        super.raceType = "Standard";
+        super.raceType = STANDARD_TYPE;
         super.raceLength = randomLength(MIN_STANDARD_LENGTH, MAX_STANDARD_LENGTH);
     }
 

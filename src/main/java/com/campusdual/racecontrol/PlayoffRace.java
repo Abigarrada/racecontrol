@@ -7,6 +7,7 @@ package com.campusdual.racecontrol;
 public class PlayoffRace extends Race{
     private static final int MIN_PLAYOFF_LENGTH = 10;
     private static final int MAX_PLAYOFF_LENGTH = 60;
+    public static final String PLAYOFF_TYPE = "Playoff";
     private int carsRacing;
 
     /*
@@ -16,7 +17,7 @@ public class PlayoffRace extends Race{
      * */
     public PlayoffRace(String raceName) {
         super(raceName);
-        super.raceType = "Playoff";
+        super.raceType = PLAYOFF_TYPE;
         super.raceLength = randomLength(MIN_PLAYOFF_LENGTH, MAX_PLAYOFF_LENGTH) + getCarsRacing();
     }
 
