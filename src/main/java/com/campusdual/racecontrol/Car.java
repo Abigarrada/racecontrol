@@ -97,12 +97,6 @@ public class Car implements Comparable<Car>{
         return speed;
     }
     /*
-     * Method to change one car's speed.
-     * */
-    public void setSpeed(int speed) {
-        this.speed = speed;
-    }
-    /*
      * Method to change one car's garage.
      * */
     public void setGarageName(String garageName) {
@@ -138,7 +132,7 @@ public class Car implements Comparable<Car>{
         }
     }
     /*
-     * Method to modify the speed of a car, updating distance covered while doing so.
+     * Method to change the speed of a car, updating distance covered while doing so.
      * */
     protected void calculateSpeed(){
         int speedModifier = Utils.getRandomNumberInRange(1,3);
@@ -179,8 +173,7 @@ public class Car implements Comparable<Car>{
         }
     }
 
-
-
+    /***********************************************/
 
     /*
      * Method to export car-type objects to JSON.
@@ -239,7 +232,7 @@ public class Car implements Comparable<Car>{
         JSONObject obj2 = Car.importFromJSONFile("test2.json");
         System.out.println(obj2);
         Car newCar2 = Car.importCar(obj2);
-        System.out.println(newCar2);*/
+        System.out.println(newCar2);
 
         Car c = new Car("seat", "leon");
         System.out.println(c);
@@ -254,7 +247,10 @@ public class Car implements Comparable<Car>{
         System.out.println("Final coche 1. Velocidad: " + c.getSpeed() + ". Distancia: " + c.getDistance());
         System.out.println("Final coche 2. Velocidad: " + c2.getSpeed() + ". Distancia: " + c2.getDistance());
 
-        System.out.println(c.compareTo(c2));
+        System.out.println(c.compareTo(c2));*/
+
+
+
 
     }
 }

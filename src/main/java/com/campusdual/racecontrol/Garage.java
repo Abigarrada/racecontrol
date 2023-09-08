@@ -35,13 +35,12 @@ public class Garage {
             System.out.println(g);
         }
     }
-
+    /*
+     * Method to get one garage's name.
+     * */
+    public String getGarageName() {
+        return garageName;
+    }
 }
 
-/*
-* En los Torneos y las Carreras, pueden participar uno o varios Garajes.
-* Si participa uno, todos sus coches entrarán en la competición.
-* En el caso de ser más de uno, solo competirá un coche de cada Garaje,
-* elegido de forma aleatoria.
-* */
 

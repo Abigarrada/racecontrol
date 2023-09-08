@@ -17,7 +17,6 @@ public class Tournament {
     public Tournament(String tournamentName) {
         this.tournamentName = tournamentName;
     }
-
     /*
      * Method to create a new tournament adding it to the tournament list from the menu.
      * */
@@ -26,19 +25,19 @@ public class Tournament {
         Tournament.tournamentList.add(new Tournament(t.toLowerCase()));
         System.out.println("New tournament " + t.toLowerCase() + " was registered ");
     }
-
+    /*
+     * Method to show the list of tournaments.
+     * */
     public static void showTournamentList(){
         for (Tournament t: tournamentList){
             System.out.println(t);
         }
     }
-
-
+    /*
+     * Method to get a tournament's name.
+     * */
     public String getTournamentName() {
         return tournamentName;
     }
 
-    public void setTournamentName(String tournamentName) {
-        this.tournamentName = tournamentName;
-    }
 }

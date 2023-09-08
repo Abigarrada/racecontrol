@@ -1,6 +1,9 @@
 package com.campusdual.racecontrol;
 
 import com.campusdual.util.Input;
+import com.campusdual.util.Utils;
+
+import java.util.List;
 
 /*
  * Menu class with menu options.
@@ -72,31 +75,34 @@ public class Menu {
      * Method to show the race menu (main menu option 2).
      * */
     private static void raceMenu(){
-        int tournamentMenu;
+        int raceMenu;
         do {
-            tournamentMenu = Input.integer("Manage a race: \n" +
+            raceMenu = Input.integer("Manage a race: \n" +
                     "1: Register new standard race \n" +
                     "2: Register new playoff race \n" +
                     "3: View existing races \n" +
                     "4: Manage existing races" +
                     "5: Back \n");
-            switch (tournamentMenu) {
+            switch (raceMenu) {
                 case 1:
-                    Tournament.addTournamentToList();
+                    System.out.println("Opción 1");
                     break;
                 case 2:
-                    Tournament.showTournamentList();
+                    System.out.println("Opción 2");
                     break;
                 case 3:
-                    Menu.manageTournamentMenu();
+                    System.out.println("Opción 3");
                     break;
                 case 4:
+                    System.out.println("Opción 4");
+                    break;
+                case 5:
                     break;
                 default:
-                    System.out.println("Please, enter a number between 1 and 4.");
+                    System.out.println("Please, enter a number between 1 and 5.");
             }
         }
-        while (tournamentMenu != 3);
+        while (raceMenu != 5);
     }
     /*
      * Method to show the garage menu (main menu option 3).

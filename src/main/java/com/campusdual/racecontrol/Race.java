@@ -79,7 +79,6 @@ public abstract class Race {
         return Race.NAME +  ": " + this.getRaceName() + "\n" + Race.TYPE + ": " + this.getRaceType() + "\n" + Race.LENGTH + ": " + getRaceLength();
     }
 
-
     protected void racingCars(Race r, Car c){
         for (int i = 0; i <= r.getRaceLength(); i++) {
             c.calculateSpeed();
