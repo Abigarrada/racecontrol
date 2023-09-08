@@ -81,14 +81,11 @@ public abstract class Race {
 
 
     protected void racingCars(Race r, Car c){
-
         for (int i = 0; i <= r.getRaceLength(); i++) {
             c.calculateSpeed();
-            }
 
         }
     }
-
 
 
 }
