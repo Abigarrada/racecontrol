@@ -10,21 +10,15 @@ public class StandardRace extends Race {
     public static final String STANDARD_TYPE = "Standard";
 
     /*
-    * StandardRace class constructor.
-    * Needs a race name.
-    * Marks race type as standard and creates a random length.
-    * */
+     * StandardRace class constructor.
+     * Needs a race name.
+     * Marks race type as standard and creates a random length.
+     * */
     public StandardRace(String raceName) {
         super(raceName);
         super.raceType = STANDARD_TYPE;
         super.raceLength = randomLength(MIN_STANDARD_LENGTH, MAX_STANDARD_LENGTH);
     }
-
-    public static void main(String[] args) {
-        StandardRace r1 = new StandardRace("mi primerita ves");
-        System.out.println(r1.toString());
-    }
-
 
 
 }
