@@ -77,9 +77,7 @@ public class Tournament {
      * */
     @Override
     public String toString() {
-        return Tournament.TOURNAMENT_NAME + ": " + this.getTournamentName() + "\t\n" +
-                Race.RACE_TYPE + ": " + this.getRaceType() + "\t\n" +
-                Race.RACE_LENGTH + ": " + getRaceLength();
+        return Tournament.TOURNAMENT_NAME + ": " + this.getTournamentName();
     }
 
 }
