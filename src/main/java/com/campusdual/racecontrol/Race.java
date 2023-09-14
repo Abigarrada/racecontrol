@@ -19,6 +19,7 @@ public abstract class Race {
     public static final String RACE_NAME = "Name";
     public static final String RACE_TYPE = "Type";
     public static final String RACE_LENGTH = "Length";
+    public static final String RACE_FILE = "raceList.json";
     protected String raceName;
     protected String raceType;
     protected int raceLength;

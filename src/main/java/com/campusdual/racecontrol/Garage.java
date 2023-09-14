@@ -16,6 +16,7 @@ import java.util.List;
  */
 public class Garage {
     public static final String GARAGE_NAME = "Garage";
+    public static final String GARAGE_FILE = "garageList.json";
     private String garageName;
     protected static List<Garage> garageList = new ArrayList<>();
 
@@ -28,9 +29,11 @@ public class Garage {
      * Method to create a new garage adding it to the garage list from the menu.
      * */
     public static void addGarageToList() {
-        String g = Input.string("Enter garage name: ");
-        Garage.garageList.add(new Garage(g.toLowerCase()));
-        System.out.println("New garage " + g.toLowerCase() + " was registered ");
+        String garageName = Input.string("Enter garage name: ");
+        Garage garage = new Garage(garageName);
+        Garage.garageList.add(garage);
+        Tournament.participantList.add(garage);
+        System.out.println("New garage " + garageName.toLowerCase() + " was registered ");
     }
 
     /*
@@ -91,7 +94,7 @@ public class Garage {
     public static Garage importGarage(String fileName){
 
         JSONParser parser = new JSONParser();
-        fileName = Input.string("File name: ");
+        //fileName = Input.string("File name: ");
         try{
             JSONObject parse = (JSONObject) parser.parse(new FileReader(fileName));
 

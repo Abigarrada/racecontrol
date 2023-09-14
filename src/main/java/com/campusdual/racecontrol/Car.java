@@ -21,6 +21,7 @@ public class Car implements Comparable<Car> {
     public static final String MODEL = "Model";
     public static final String GARAGE = "Garage";
     public static final int MAX_SPEED = 200;
+    public static final String CAR_FILE = "carlist.json";
     protected static List<Car> carList = new ArrayList<>();
     protected final String brand;
     protected final String model;

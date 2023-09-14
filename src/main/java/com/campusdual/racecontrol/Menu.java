@@ -116,9 +116,8 @@ public class Menu {
             garageMenu = Input.integer("Manage a garage: \n" +
                     "1: Register new garage \n" +
                     "2: View and manage existing garages \n" +
-                    "3: Change garage name \n" +
-                    "4: Manage cars \n" +
-                    "5: Back \n");
+                    "3: Manage cars \n" +
+                    "4: Back \n");
             switch (garageMenu) {
                 case 1:
                     Garage.addGarageToList();
@@ -127,18 +126,15 @@ public class Menu {
                     Utils.showAndSelectFromList(Garage.garageList, true, true);
                     break;
                 case 3:
-                    System.out.println("Opción 3");
-                    break;
-                case 4:
                     Menu.carMenu();
                     break;
-                case 5:
+                case 4:
                     break;
                 default:
                     System.out.println("Please, enter a number between 1 and 5.");
             }
         }
-        while (garageMenu != 5);
+        while (garageMenu != 4);
     }
 
     /*

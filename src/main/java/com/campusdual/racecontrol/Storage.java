@@ -74,10 +74,10 @@ public class Storage {
      * */
     public static void importDataFromJSON(){
         JSONObject parse = new JSONObject();
-        Car.importCar(parse, "carlist.json");
-        Garage.importGarage("garageList.json");
-        Race.importRace("raceList.json");
-        Tournament.importRace("tournamentList.json");
+        Car.importCar(parse, Car.CAR_FILE);
+        Garage.importGarage(Garage.GARAGE_FILE);
+        Race.importRace(Race.RACE_FILE);
+        Tournament.importTournament(Tournament.TOURNAMENT_FILE);
     }
 
     /*
@@ -96,6 +96,12 @@ public class Storage {
         Garage.garageList.add(g3);
         Garage.garageList.add(g4);
         Garage.garageList.add(g5);
+
+        Tournament.participantList.add(g1);
+        Tournament.participantList.add(g2);
+        Tournament.participantList.add(g3);
+        Tournament.participantList.add(g4);
+        Tournament.participantList.add(g5);
 
         Car c1 = new Car("Renault", "Clio");
         Car c2 = new Car("Renault", "Megane");

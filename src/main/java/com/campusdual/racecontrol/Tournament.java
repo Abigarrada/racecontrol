@@ -1,7 +1,10 @@
 package com.campusdual.racecontrol;
 
 import com.campusdual.util.Input;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
 
+import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,6 +17,7 @@ public class Tournament {
     public static final int SILVER_POINTS = 2;
     public static final int BRONZE_POINTS = 1;
     public static final String TOURNAMENT_NAME = "Tournament name";
+    public static final String TOURNAMENT_FILE = "tournamentData.json";
     private String tournamentName;
     protected static List<Tournament> tournamentList = new ArrayList<>();
     protected static List<Race> raceList = new ArrayList<>(10);
@@ -69,6 +73,27 @@ public class Tournament {
     }
 
     public void showPodium(){
+
+    }
+
+    /*
+     * Method to import tournament-type objects from JSON.
+     * */
+    public static Tournament importTournament(String fileName){
+
+        JSONParser parser = new JSONParser();
+        //fileName = Input.string("File name: ");
+        try{
+            JSONObject parse = (JSONObject) parser.parse(new FileReader(fileName));
+
+            String name = (String) parse.get(Tournament.TOURNAMENT_NAME);
+
+            return new Tournament(name);
+
+        } catch (Exception e){
+            e.printStackTrace();
+            return null;
+        }
 
     }
 
