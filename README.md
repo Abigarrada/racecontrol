@@ -1,4 +1,4 @@
-### Enunciado 
+### Race Control 
 
 Se desea crear un programa para controlar todo el ciclo de la celebración de eventos automovilísticos.
 
